@@ -196,6 +196,12 @@ export class GenericOAuth2Web extends WebPlugin implements GenericOAuth2Plugin {
           authorizationRedirectUrlParamObj,
           accessTokenResponse,
         );
+      } else {
+        this.doLog(
+          'ERR_GENERAL: Status text: ' +
+          tokenRequest.statusText + " - Response: " + tokenRequest.response,
+        );
+        reject(new Error('ERR_GENERAL'));
       }
     };
     tokenRequest.onerror = () => {
