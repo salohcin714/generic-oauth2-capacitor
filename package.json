@@ -1,6 +1,6 @@
 {
   "name": "@chfik/generic-oauth2-capacitor",
-  "version": "6.1.0",
+  "version": "6.1.0-fork.0",
   "description": "Fork of @capacitor-community/generic-oauth2 with corrections",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
