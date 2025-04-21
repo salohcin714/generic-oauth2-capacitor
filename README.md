@@ -1,27 +1,32 @@
-<p align="center"><br><img src="https://user-images.githubusercontent.com/236501/85893648-1c92e880-b7a8-11ea-926d-95355b8175c7.png" width="128" height="128" /></p>
-<h3 align="center">Generic OAuth 2</h3>
-<p align="center"><strong><code>@capacitor-community/generic-oauth2</code></strong></p>
+<h3 align="center">Capacitor Generic OAuth 2</h3>
+<p align="center"><strong><code>@chfik/generic-oauth2-capacitor</code></strong></p>
 <p align="center">
-  Generic Capacitor OAuth 2 client plugin.
+  Fork of Generic Capacitor OAuth 2 client plugin.
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/maintenance/yes/2024?style=flat-square" />
-   <a href="https://github.com/capacitor-community/generic-oauth2/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/capacitor-community/generic-oauth2/ci.yml?branch=main&style=flat-square" /></a>
-  <a href="https://www.npmjs.com/package/@capacitor-community/generic-oauth2"><img src="https://img.shields.io/npm/l/@capacitor-community/generic-oauth2?style=flat-square" /></a>
+  <a href="https://github.com/chfik/generic-oauth2-capacitor/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/capacitor-community/generic-oauth2/ci.yml?branch=main&style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@chfik/generic-oauth2-capacitor"><img src="https://img.shields.io/npm/l/@chfik/generic-oauth2-capacitor?style=flat-square" /></a>
 <br>
-  <a href="https://www.npmjs.com/package/@capacitor-community/generic-oauth2"><img src="https://img.shields.io/npm/dw/@capacitor-community/generic-oauth2?style=flat-square" /></a>
-  <a href="https://www.npmjs.com/package/@capacitor-community/generic-oauth2"><img src="https://img.shields.io/npm/v/@capacitor-community/generic-oauth2?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@chfik/generic-oauth2-capacitor"><img src="https://img.shields.io/npm/dw/@chfik/generic-oauth2-capacitor?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@chfik/generic-oauth2-capacitor"><img src="https://img.shields.io/npm/v/@chfik/generic-oauth2-capacitor?style=flat-square" /></a>
 </p>
 
-## Introduction
+## 🧪 About this Fork
 
-This is a **generic OAuth 2 client** plugin. It lets you configure the oauth parameters yourself instead of using SDKs. Therefore it is usable with various providers. See [identity providers](#list-of-providers) the community has already used this plugin with.
+This project is a **fork** of [capacitor-community/generic-oauth2](https://github.com/capacitor-community/generic-oauth2).
+
+It was created to fix specific issues and to support use cases not currently handled by the original package. This fork is **not affiliated** with the Capacitor Community.
+
+### ✅ Changes in this fork
+
+- 
+
 
 ## Installation
 
 ```bash
-npm install @capacitor-community/generic-oauth2
+npm install @chfik/generic-oauth2-capacitor
 npx cap sync
 ```
 
@@ -92,7 +97,7 @@ That flow should only be used on the backend (server).
 ### Use it
 
 ```typescript
-import { GenericOAuth2 } from '@capacitor-community/generic-oauth2';
+import { GenericOAuth2 } from '@chfik/generic-oauth2-capacitor';
 
 @Component({
   template:
@@ -482,7 +487,7 @@ In Angular do sth like
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { Device, DeviceInfo } from '@capacitor/device';
-import { GenericOAuth2 } from '@capacitor-community/generic-oauth2';
+import { GenericOAuth2 } from '@chfik/generic-oauth2-capacitor';
 
 @Component({
   templateUrl: './siwa.component.html',
@@ -543,7 +548,7 @@ They share the same core features and therefore the plugin should work either wa
 import {
   OAuth2AuthenticateOptions,
   GenericOAuth2,
-} from '@capacitor-community/generic-oauth2';
+} from '@chfik/generic-oauth2-capacitor';
 
 export class AuthService {
   getAzureB2cOAuth2Options(): OAuth2AuthenticateOptions {
@@ -582,7 +587,7 @@ Try to experiment with the config until Azure includes everything you need in th
 <summary>A configuration with custom scopes might look like this:</summary>
 
 ```typescript
-import {GenericOAuth2} from "@capacitor-community/generic-oauth2";
+import {GenericOAuth2} from "@chfik/generic-oauth2-capacitor";
 
   getAzureB2cOAuth2Options(): OAuth2AuthenticateOptions {
     return {
@@ -618,7 +623,7 @@ import {GenericOAuth2} from "@capacitor-community/generic-oauth2";
 <summary>Other configs that works in prior versions</summary>
 
 ```typescript
-import {GenericOAuth2} from "@capacitor-community/generic-oauth2";
+import {GenericOAuth2} from "@chfik/generic-oauth2-capacitor";
 
 azureLogin() {
   GenericOAuth2.authenticate({
@@ -649,7 +654,7 @@ azureLogin() {
 ```
 
 ```typescript
-import {GenericOAuth2} from "@capacitor-community/generic-oauth2";
+import {GenericOAuth2} from "@chfik/generic-oauth2-capacitor";
 
 azureLogin() {
   GenericOAuth2.authenticate({
@@ -786,7 +791,7 @@ See this [example repo](https://github.com/loonix/capacitor-oauth2-azure-example
 #### PWA
 
 ```typescript
-import {GenericOAuth2} from "@capacitor-community/generic-oauth2";
+import {GenericOAuth2} from "@chfik/generic-oauth2-capacitor";
 
 googleLogin() {
     GenericOAuth2.authenticate({
@@ -832,7 +837,7 @@ See [iOS Default Config](#ios-default-config)
 #### PWA
 
 ```typescript
-import {GenericOAuth2} from "@capacitor-community/generic-oauth2";
+import {GenericOAuth2} from "@chfik/generic-oauth2-capacitor";
 
 facebookLogin() {
     let fbApiVersion = "2.11";
@@ -1031,7 +1036,7 @@ install! 'cocoapods', :disable_input_output_paths => true
 def capacitor_pods
   pod 'Capacitor', :path => '../../node_modules/@capacitor/ios'
   pod 'CapacitorCordova', :path => '../../node_modules/@capacitor/ios'
-  pod 'CapacitorCommunityGenericOauth2', :path => '../../node_modules/@capacitor-community/generic-oauth2'
+  pod 'CapacitorCommunityGenericOauth2', :path => '../../node_modules/@chfik/generic-oauth2-capacitor'
   # core plugins
   pod 'CapacitorApp', :path => '../../node_modules/@capacitor/app'
   pod 'CapacitorDevice', :path => '../../node_modules/@capacitor/device'

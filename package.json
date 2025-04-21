@@ -1,7 +1,7 @@
 {
-  "name": "@capacitor-community/generic-oauth2",
+  "name": "@chfik/generic-oauth2-capacitor",
   "version": "6.1.0",
-  "description": "Capacitor OAuth 2 client plugin",
+  "description": "Fork of @capacitor-community/generic-oauth2 with corrections",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -17,10 +17,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/capacitor-community/generic-oauth2.git"
+    "url": "git+https://github.com/chfik/generic-oauth2-capacitor"
   },
+  "homepage": "https://github.com/chfik/generic-oauth2-capacitor",
   "bugs": {
-    "url": "https://github.com/capacitor-community/generic-oauth2/issues"
+    "url": "https://github.com/chfik/generic-oauth2-capacitor/issues"
   },
   "keywords": [
     "capacitor",
@@ -44,7 +45,7 @@
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
     "test": "jest",
-    "removePacked": "rimraf -g capacitor-community-generic-oauth2-*.tgz",
+    "removePacked": "rimraf -g chfik-generic-oauth2-capacitor-*.tgz",
     "publish:locally": "npm run removePacked && npm run build && npm pack",
     "prepublishOnly": "npm run build"
   },
@@ -62,7 +63,7 @@
     "prettier": "3.3.3",
     "prettier-plugin-java": "2.6.4",
     "rimraf": "6.0.1",
-    "rollup": "4.19.1",
+    "rollup": "4.22.4",
     "swiftlint": "1.0.2",
     "ts-jest": "29.2.3",
     "typescript": "5.5.4"
