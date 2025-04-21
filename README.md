@@ -20,6 +20,7 @@ It was created to fix specific issues and to support use cases not currently han
 
 ### ✅ Changes in this fork
 
+- now the plugin uses ASWebAuthenticationSession on ios
 - 
 
 
