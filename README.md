@@ -23,13 +23,98 @@ It was created to fix specific issues and to support use cases not currently han
 - now the plugin uses ASWebAuthenticationSession on ios
 - Handle token request failures with error logging and rejection
 
+## 🚀 Quick Start
 
-## Installation
+### Installation
 
 ```bash
 npm install @chfik/generic-oauth2-capacitor
 npx cap sync
 ```
+
+### Basic Usage
+
+```typescript
+import { GenericOAuth2 } from '@chfik/generic-oauth2-capacitor';
+
+// Authentication
+const result = await GenericOAuth2.authenticate({
+  authorizationBaseUrl: 'https://accounts.google.com/o/oauth2/auth',
+  accessTokenEndpoint: 'https://www.googleapis.com/oauth2/v4/token',
+  scope: 'email profile',
+  resourceUrl: 'https://www.googleapis.com/userinfo/v2/me',
+  web: {
+    appId: 'your-web-client-id',
+    responseType: 'token',
+    redirectUrl: 'http://localhost:4200',
+  },
+  android: {
+    appId: 'your-android-client-id',
+    responseType: 'code',
+    redirectUrl: 'com.yourcompany.yourapp://'
+  },
+  ios: {
+    appId: 'your-ios-client-id', 
+    responseType: 'code',
+    redirectUrl: 'com.yourcompany.yourapp://'
+  }
+});
+
+console.log('Access token:', result.access_token);
+console.log('User info:', result); // if resourceUrl is provided
+```
+
+### Available Methods
+
+- `authenticate(options)` - Authenticate user and get access token
+- `refreshToken(options)` - Refresh an expired access token  
+- `logout(options)` - Log out user and revoke tokens
+- `redirectFlowCodeListener(options)` - Handle OAuth redirect flow
+
+## 🔧 Troubleshooting
+
+### Import Issues
+
+If you're having trouble importing the plugin, make sure you're using the correct import statement:
+
+```typescript
+// ✅ Correct
+import { GenericOAuth2 } from '@chfik/generic-oauth2-capacitor';
+
+// ❌ Incorrect  
+import GenericOAuth2 from '@chfik/generic-oauth2-capacitor';
+import { GenericOAuth2Plugin } from '@chfik/generic-oauth2-capacitor';
+```
+
+### Build Issues
+
+If you encounter build errors:
+
+1. **Clear your build cache:**
+   ```bash
+   npx cap clean
+   npm run build
+   npx cap sync
+   ```
+
+2. **Check TypeScript version compatibility:**
+   - This plugin requires TypeScript 4.0 or higher
+   - Make sure your project uses compatible Capacitor 6.x versions
+
+3. **Verify package installation:**
+   ```bash
+   npm ls @chfik/generic-oauth2-capacitor
+   ```
+
+### Platform-Specific Issues
+
+#### iOS
+- Ensure you have the latest iOS deployment target (iOS 13.0+)
+- Check that your redirect URL is registered in your app's URL schemes
+
+#### Android  
+- Verify your redirect URL matches the one configured in your OAuth provider
+- Check that the required permissions are set in your AndroidManifest.xml
 
 ## Versions
 
