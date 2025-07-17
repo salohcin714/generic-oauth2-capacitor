@@ -11,7 +11,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "CapacitorCommunityGenericOAuth2.podspec"
+    "ChfikGenericOauth2Capacitor.podspec"
   ],
   "author": "",
   "license": "MIT",
